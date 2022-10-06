@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Amigos do YURiPA</title>
+  </head>
+  <body class="bg-zinc-900 text-zinc-200">
+    <header
+      class="h-20 flex items-center justify-center bg-zinc-900 border-b border-zinc-800"
+    >
+      <nav>
+        <ul class="flex gap-2 text">
+          <li>
+            <a class="p-4 hover:text-emerald-500 transition-all" href="/"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a
+              class="p-4 hover:text-emerald-500 transition-all"
+              href="./fotos.html"
+              >Fotos</a
+            >
+          </li>
+          <li>
+            <a
+              class="p-4 hover:text-emerald-500 transition-all"
+              href="./videos.html"
+              >Vídeos</a
+            >
+          </li>
+          <li>
+            <a class="p-4 text-emerald-500" href="/">Quero ser um amigo</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="flex justify-center items-center gradient py-12">
+      <form
+        action="#"
+        class="w-96 bg-zinc-900 p-8 py-12 rounded-md flex flex-col gap-6"
+      >
+        <h2 class="text-xl font-bold text-emerald-500 mb-6">
+          Torne-se um amigo do
+          <span
+            class="bg-gradient-to-r to-violet-500 from-emerald-500 bg-clip-text text-transparent"
+            >YURiPA</span
+          >
+        </h2>
+        <div class="flex flex-col">
+          <label for="name" class="text-violet-500 mb-2">Nome:</label>
+          <input
+            id="name"
+            type="text"
+            class="bg-zinc-900 border border-zinc-800 p-4 rounded-md text-zinc-300"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="imageUrl" class="text-violet-500 mb-2"
+            >URL da imagem:</label
+          >
+          <input
+            id="imageUrl"
+            type="text"
+            class="bg-zinc-900 border border-zinc-800 p-4 rounded-md text-zinc-300"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-violet-500 mb-2">Chave PIX:</label>
+          <p class="bg-zinc-900 rounded-md text-zinc-300">
+            <img
+              src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2025%22%20shape-rendering%3D%22crispEdges%22%20style%3D%22fill%3A%20rgb(24%2C%2024%2C%2027)%3B%22%20width%3D%2225%22%20height%3D%2225%22%3E%3Cpath%20fill%3D%22%2318181b%22%20d%3D%22M0%200h25v25H0z%22%2F%3E%3Cpath%20stroke%3D%22%2330b981%22%20d%3D%22M0%200.5h7m1%200h2m1%200h1m1%200h1m1%200h1m2%200h7M0%201.5h1m5%200h1m1%200h1m2%200h4m1%200h1m1%200h1m5%200h1M0%202.5h1m1%200h3m1%200h1m1%200h3m1%200h2m1%200h2m1%200h1m1%200h3m1%200h1M0%203.5h1m1%200h3m1%200h1m3%200h1m4%200h2m1%200h1m1%200h3m1%200h1M0%204.5h1m1%200h3m1%200h1m1%200h2m1%200h2m1%200h1m1%200h1m1%200h1m1%200h3m1%200h1M0%205.5h1m5%200h1m3%200h1m1%200h1m3%200h1m1%200h1m5%200h1M0%206.5h7m1%200h1m1%200h1m1%200h1m1%200h1m1%200h1m1%200h7M9%207.5h2m1%200h2m1%200h1M0%208.5h1m2%200h7m2%200h2m1%200h1m1%200h1m2%200h1m1%200h3M0%209.5h3m1%200h1m6%200h4m5%200h2M0%2010.5h2m3%200h4m2%200h1m1%200h1m1%200h4m2%200h2m1%200h1M7%2011.5h2m4%200h1m3%200h2m2%200h2m1%200h1M0%2012.5h1m1%200h1m2%200h2m1%200h3m1%200h2m1%200h1m2%200h1m2%200h1m2%200h1M0%2013.5h1m1%200h2m1%200h1m1%200h1m5%200h2m1%200h2m2%200h1m1%200h1M0%2014.5h2m3%200h9m1%200h1m1%200h2m2%200h4M0%2015.5h1m1%200h2m6%200h2m4%200h7M0%2016.5h1m3%200h3m2%200h2m3%200h1m1%200h7m1%200h1M8%2017.5h2m1%200h6m3%200h1m1%200h1m1%200h1M0%2018.5h7m1%200h4m3%200h2m1%200h1m1%200h1m1%200h1m1%200h1M0%2019.5h1m5%200h1m1%200h2m2%200h1m1%200h3m3%200h1m2%200h1M0%2020.5h1m1%200h3m1%200h1m1%200h1m3%200h10m2%200h1M0%2021.5h1m1%200h3m1%200h1m1%200h3m3%200h1m1%200h3m3%200h3M0%2022.5h1m1%200h3m1%200h1m2%200h1m2%200h1m1%200h2m1%200h1m1%200h3m1%200h2M0%2023.5h1m5%200h1m2%200h1m4%200h1m4%200h6M0%2024.5h7m1%200h1m1%200h1m2%200h4m1%200h3m3%200h1%22%2F%3E%3C%2Fsvg%3E"
+              alt=""
+              class="w-[100px]"
+            />
+          </p>
+        </div>
+        <button
+          class="bg-gradient-to-r from-violet-500 to-emerald-500 p-4 rounded-md font-bold text-zinc-900 hover:from-emerald-500 hover:to-violet-500"
+        >
+          Quero me tornar um amigo
+        </button>
+      </form>
+    </section>
+
+    <footer
+      class="h-20 flex items-center justify-center bg-zinc-900 border-t border-zinc-800"
+    >
+      yuripinha 2022
+    </footer>
+  </body>
+</html>
