@@ -1,8 +1,8 @@
-const express = require('express');
-const { PrismaClient } = require('@prisma/client');
+import express, { json } from 'express';
+import { PrismaClient } from '@prisma/client';
 
 const app = express();
-app.use(express.json());
+app.use(json());
 
 const prisma = new PrismaClient();
 
