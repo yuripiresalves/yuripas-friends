@@ -33,4 +33,4 @@ app.get('/friends', async (req, res) => {
   return res.status(200).json(friends);
 });
 
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
