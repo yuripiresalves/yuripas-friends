@@ -100,6 +100,7 @@
       function submitFriend() {
         let name = document.getElementById('name').value;
         let imageUrl = document.getElementById('imageUrl').value;
+        const form = document.querySelector('form');
 
         if (!name || !imageUrl) {
           return alert('Preencha os campos!');
@@ -116,11 +117,10 @@
           headers: { 'Content-type': 'application/json; charset=UTF-8' },
         }).then((response) => {
           if (response.status !== 201) {
-            return alert('Erro ao se tornar um amigo de YURiPA');
+            return alert('Erro ao se tornar um amigo de YURiPA :(');
           }
 
-          name.innetText = '';
-          imageUrl.innetText = '';
+          form.reset();
           return alert('Parabéns! Agora você é um amigo de YURiPA :)');
         });
       }
