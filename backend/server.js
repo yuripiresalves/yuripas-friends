@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express();
 app.use(json());
-app.use(cors);
+app.use(cors());
 
 const prisma = new PrismaClient();
 
