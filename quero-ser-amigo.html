@@ -44,10 +44,7 @@
     <section
       class="min-h-[calc(100vh-160px)] flex justify-center items-center gradient py-12"
     >
-      <form
-        action="#"
-        class="w-96 bg-zinc-900 p-8 py-12 rounded-md flex flex-col gap-6"
-      >
+      <form class="w-96 bg-zinc-900 p-8 py-12 rounded-md flex flex-col gap-6">
         <h2 class="text-xl font-bold text-emerald-500 mb-6">
           Torne-se um amigo do
           <span
@@ -84,6 +81,8 @@
           </p>
         </div>
         <button
+          onclick="submitFriend()"
+          type="button"
           class="bg-gradient-to-r from-violet-500 to-emerald-500 p-4 rounded-md font-bold text-zinc-900 hover:from-emerald-500 hover:to-violet-500"
         >
           Quero me tornar um amigo
@@ -96,5 +95,35 @@
     >
       yuripinha 2022
     </footer>
+
+    <script>
+      function submitFriend() {
+        let name = document.getElementById('name').value;
+        let imageUrl = document.getElementById('imageUrl').value;
+
+        if (!name || !imageUrl) {
+          return alert('Preencha os campos!');
+        }
+
+        const data = {
+          name,
+          imageUrl,
+        };
+
+        fetch('https://yuripas-friends.herokuapp.com/friends', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-type': 'application/json; charset=UTF-8' },
+        }).then((response) => {
+          if (response.status !== 201) {
+            return alert('Erro ao se tornar um amigo de YURiPA');
+          }
+
+          name.innetText = '';
+          imageUrl.innetText = '';
+          return alert('Parabéns! Agora você é um amigo de YURiPA :)');
+        });
+      }
+    </script>
   </body>
 </html>

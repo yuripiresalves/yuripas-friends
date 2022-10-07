@@ -52,80 +52,10 @@
       </div>
     </section>
 
-    <section class="container mx-auto p-8 grid grid-cols-5 gap-8">
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
-        <div class="w-56 h-72">
-          <img
-            src="https://github.com/yuripiresalves.png"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <p title="oi" class="text-lg text-emerald-500 text-center p-2 truncate">
-          Bibi valentas Bibi valentas Bibi valentas Bibi valentas Bibi valentas
-        </p>
-      </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
-        <div class="w-56 h-72">
-          <img
-            src="https://github.com/gabriel-valentim.png"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <p title="oi" class="text-lg text-emerald-500 text-center p-2 truncate">
-          Bibi valentas Bibi valentas Bibi valentas Bibi valentas Bibi valentas
-        </p>
-      </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
-        <div class="w-56 h-72">
-          <img
-            src="https://github.com/nayanebatista.png"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <p title="oi" class="text-lg text-emerald-500 text-center p-2 truncate">
-          Bibi valentas Bibi valentas Bibi valentas Bibi valentas Bibi valentas
-        </p>
-      </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
-        <div class="w-56 h-72">
-          <img
-            src="https://github.com/murilopiresalves.png"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <p title="oi" class="text-lg text-emerald-500 text-center p-2 truncate">
-          Bibi valentas Bibi valentas Bibi valentas Bibi valentas Bibi valentas
-        </p>
-      </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
-        <div class="w-56 h-72">
-          <img
-            src="https://lh3.googleusercontent.com/a-/ACNPEu-gcl5xHmOIKMyUYpdAHqEstAT5hu5dek7vgjPpuA=s500-p-k-no"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <p title="oi" class="text-lg text-emerald-500 text-center p-2 truncate">
-          Leozinho
-        </p>
-      </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
-        <div class="w-56 h-72">
-          <img
-            src="https://github.com/daniloarr.png"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <p title="oi" class="text-lg text-emerald-500 text-center p-2 truncate">
-          Bibi valentas Bibi valentas Bibi valentas Bibi valentas Bibi valentas
-        </p>
-      </div>
-    </section>
+    <section
+      id="friends"
+      class="container mx-auto p-8 grid grid-cols-5 gap-8"
+    ></section>
 
     <footer
       class="h-20 flex items-center justify-center bg-zinc-900 border-t border-zinc-800"
@@ -134,9 +64,29 @@
     </footer>
 
     <script>
-      const response = fetch('https://yuripas-friends.herokuapp.com/friends');
-      const friends = response.json();
-      console.log(friends);
+      const friendsSection = document.getElementById('friends');
+
+      fetch('https://yuripas-friends.herokuapp.com/friends')
+        .then((response) => response.json())
+        .then((friends) => {
+          friends.forEach((friend) => {
+            friendsSection.innerHTML += `
+            <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+              <input type="hidden" value="${friend.id}">
+              <div class="w-56 h-72">
+                <img
+                  src="${friend.imageUrl}"
+                  alt="Foto de ${friend.name}"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <p title="${friend.name}" class="text-lg text-emerald-500 text-center p-2 truncate">
+                ${friend.name}
+              </p>
+            </div>
+            `;
+          });
+        });
     </script>
   </body>
 </html>

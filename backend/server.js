@@ -30,9 +30,24 @@ app.post('/friends', async (req, res) => {
 });
 
 app.get('/friends', async (req, res) => {
-  const friends = await prisma.friend.findMany();
+  const friends = await prisma.friend.findMany({
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
 
   return res.status(200).json(friends);
+});
+
+app.delete('/friends', async (req, res) => {
+  const { id } = req.body;
+  const friend = await prisma.friend.delete({
+    where: {
+      id,
+    },
+  });
+
+  return res.status(200).json({ message: 'Amigo deletado com sucesso!' });
 });
 
 app.listen(process.env.PORT || 3333);
