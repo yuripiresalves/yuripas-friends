@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon ./backend/server.js",
-    "start": "npx prisma generate --schema=./backend/prisma/schema.prisma && node ./backend/server.js"
+    "heroku-prebuild": "npx prisma generate --schema=./backend/prisma/schema.prisma",
+    "start": "node ./backend/server.js"
   },
   "keywords": [],
   "author": "",
