@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon ./backend/server.js",
-    "start": "npx prisma generate --schema=./backend/prisma/schema.prisma && node ./backend/server.js"
+    "start": "node ./backend/server.js"
   },
   "keywords": [],
   "author": "",
