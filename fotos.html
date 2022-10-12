@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Primary Meta Tags -->
     <title>Amigos do YURiPA</title>
     <meta name="title" content="Amigos do YURiPA" />
@@ -89,7 +91,10 @@
       id="friends"
       class="min-h-[calc(100vh-320px)] container mx-auto p-8 grid md:grid-cols-5 gap-8"
     >
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+      <div
+        class="w-56 rounded-md bg-zinc-800 overflow-hidden"
+        data-aos="fade-up"
+      >
         <div class="w-56 h-72">
           <img
             src="https://github.com/ribeiroleoz.png"
@@ -104,7 +109,11 @@
           Leonardo Ribeiro
         </p>
       </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+      <div
+        class="w-56 rounded-md bg-zinc-800 overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="50"
+      >
         <div class="w-56 h-72">
           <img
             src="https://github.com/gabriel-valentim.png"
@@ -119,7 +128,11 @@
           Gabriel Valentim de Oliveira Dacie
         </p>
       </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+      <div
+        class="w-56 rounded-md bg-zinc-800 overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <div class="w-56 h-72">
           <img
             src="https://github.com/brumassio.png"
@@ -134,7 +147,11 @@
           Brumassio
         </p>
       </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+      <div
+        class="w-56 rounded-md bg-zinc-800 overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         <div class="w-56 h-72">
           <img
             src="https://lh3.googleusercontent.com/a-/ACNPEu-gcl5xHmOIKMyUYpdAHqEstAT5hu5dek7vgjPpuA=s500-p"
@@ -149,7 +166,11 @@
           Leozinho
         </p>
       </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+      <div
+        class="w-56 rounded-md bg-zinc-800 overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         <div class="w-56 h-72">
           <img
             src="https://github.com/nayanebatista.png"
@@ -164,7 +185,10 @@
           Nay
         </p>
       </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+      <div
+        class="w-56 rounded-md bg-zinc-800 overflow-hidden"
+        data-aos="fade-up"
+      >
         <div class="w-56 h-72">
           <img
             src="https://github.com/daniloarr.png"
@@ -179,7 +203,10 @@
           Danilão
         </p>
       </div>
-      <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+      <div
+        class="w-56 rounded-md bg-zinc-800 overflow-hidden"
+        data-aos="fade-up"
+      >
         <div class="w-56 h-72">
           <img
             src="https://github.com/yuripiresalves.png"
@@ -201,8 +228,13 @@
     >
       yuripinha 2022
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+      AOS.init({
+        once: true,
+      });
+
       const friendsSection = document.getElementById('friends');
 
       fetch('https://yuripas-friends.herokuapp.com/friends')
@@ -210,7 +242,7 @@
         .then((friends) => {
           friends.forEach((friend) => {
             friendsSection.innerHTML += `
-            <div class="w-56 rounded-md bg-zinc-800 overflow-hidden">
+            <div class="w-56 rounded-md bg-zinc-800 overflow-hidden" data-aos="fade-up">
               <input type="hidden" value="${friend.id}">
               <div class="w-56 h-72">
                 <img
